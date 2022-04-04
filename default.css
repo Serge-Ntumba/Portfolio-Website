@@ -1,38 +1,18 @@
-/* :root{
-	--mainColor:#eaeaea;
-	--secondaryColor:#fff;
-
-	--borderColor:#c1c1c1;
-
-	--mainText:black;
-	--secondaryText:#4b5156;
-
-	--themeDotBorder:#24292e;
-
-	--previewBg:rgb(251, 249, 243, 0.8);
-	--previewShadow:#f0ead6;
-
-
-	--buttonColor:black;
-
-
-} */
-
 :root {
-  --mainColor: #15202b;
-  --secondaryColor: #192734;
+  --mainColor: #eaeaea;
+  --secondaryColor: #fff;
 
-  --borderColor: #164d56;
+  --borderColor: #c1c1c1;
 
-  --mainText: #fff;
-  --secondaryText: #eeeeee;
+  --mainText: black;
+  --secondaryText: #4b5156;
 
-  --themeDotBorder: #fff;
+  --themeDotBorder: #24292e;
 
-  --previewBg: rgb(25, 39, 52, 0.8);
-  --previewShadow: #111921;
+  --previewBg: rgb(251, 249, 243, 0.8);
+  --previewShadow: #f0ead6;
 
-  --buttonColor: #17a2b8;
+  --buttonColor: black;
 }
 
 html,

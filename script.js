@@ -1,4 +1,5 @@
 let theme = localStorage.getItem("theme");
+let themeDots = document.getElementsByClassName("theme-dot");
 
 if (theme == null) {
   setTheme("light");
@@ -6,22 +7,39 @@ if (theme == null) {
   setTheme(theme);
 }
 
-let themeDots = document.getElementsByClassName("theme-dot");
+let counter = 0;
+
+const introduceThemes = () => {
+  setTimeout(function () {
+    setTheme(themeDots[counter].dataset.mode);
+    counter++;
+    if (counter < themeDots.length) {
+      introduceThemes();
+    }
+
+    if (counter === 4) {
+      setTheme(themeDots[1].dataset.mode);
+    }
+  }, 3000);
+};
+introduceThemes();
 
 for (var i = 0; themeDots.length > i; i++) {
   themeDots[i].addEventListener("click", function () {
+    // console.log(this);
     let mode = this.dataset.mode;
     console.log("Option clicked:", mode);
+
     setTheme(mode);
   });
 }
 
 function setTheme(mode) {
-  if (mode == "blue") {
+  if (mode == "light") {
     document.getElementById("theme-style").href = "default.css";
   }
 
-  if (mode == "light") {
+  if (mode == "blue") {
     document.getElementById("theme-style").href = "blue.css";
   }
 
@@ -59,11 +77,12 @@ window.addEventListener("DOMContentLoaded", function () {
 
   // handle the form submission event
 
-  form.addEventListener("submit", function (ev) {
-    ev.preventDefault();
-    var data = new FormData(form);
-    ajax(form.method, form.action, data, success, error);
-  });
+  form &&
+    form.addEventListener("submit", function (ev) {
+      ev.preventDefault();
+      var data = new FormData(form);
+      ajax(form.method, form.action, data, success, error);
+    });
 });
 
 // helper function for sending an AJAX request
