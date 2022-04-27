@@ -26,7 +26,6 @@ introduceThemes();
 
 for (var i = 0; themeDots.length > i; i++) {
   themeDots[i].addEventListener("click", function () {
-    // console.log(this);
     let mode = this.dataset.mode;
     console.log("Option clicked:", mode);
 
